@@ -5,11 +5,11 @@ import { useState } from "react";
 import { siteConfig } from "@/config/site";
 
 const navItems = [
-  ["Work", "/projects"],
-  ["Services", "/services"],
-  ["Materials", "/materials"],
-  ["About", "/about"],
-  ["Contact", "/contact"],
+  ["About", "/#about"],
+  ["Capabilities", "/#capabilities"],
+  ["Materials", "/#materials"],
+  ["Journal", "/#journal"],
+  ["Contact", "/#contact"],
 ];
 
 export function Logo({ light = false }: { light?: boolean }) {
@@ -83,7 +83,7 @@ export function SiteHeader() {
               {label}
             </Link>
           ))}
-          <Button href="/request-a-quote">Request a quote</Button>
+          <Button href="/#contact">Request a quote</Button>
         </nav>
         <button
           className="menu-toggle"
@@ -101,13 +101,13 @@ export function SiteHeader() {
           className="mobile-nav"
           aria-label="Mobile navigation"
         >
-          {[...navItems, ["Process", "/about#process"]].map(([label, href]) => (
+          {navItems.map(([label, href]) => (
             <Link onClick={() => setOpen(false)} key={href} href={href}>
               {label}
               <span>↗</span>
             </Link>
           ))}
-          <Button href="/request-a-quote">Request a quote</Button>
+          <Button href="/#contact">Request a quote</Button>
         </nav>
       )}
     </header>
@@ -128,6 +128,7 @@ export function SiteFooter() {
             <Link href="/projects">Work</Link>
             <Link href="/services">Services</Link>
             <Link href="/materials">Materials</Link>
+            <Link href="/journal">Journal</Link>
             <Link href="/about">About</Link>
           </div>
           <div>
@@ -138,8 +139,6 @@ export function SiteFooter() {
               Bespoke architectural fabrication
               <br />
               Mild steel · Stainless steel · Aluminium
-              <br />
-              Timber · Coming soon
             </p>
           </div>
         </div>
