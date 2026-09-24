@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { siteConfig } from "@/config/site";
@@ -8,26 +9,28 @@ const navItems = [
   ["About", "/#about"],
   ["Capabilities", "/#capabilities"],
   ["Materials", "/#materials"],
+  ["Shop", "/shop"],
   ["Journal", "/#journal"],
   ["Contact", "/#contact"],
 ];
 
 export function Logo({ light = false }: { light?: boolean }) {
+  const src = light ? "/footer logo .png" : "/logo.png";
+
   return (
     <Link
       className={`logo ${light ? "logo--light" : ""}`}
       href="/"
       aria-label="Jakin Works home"
     >
-      <span className="logo-mark">
-        <b>J</b>
-        <b>W</b>
-      </span>
-      <span className="logo-name">
-        JAKIN
-        <br />
-        WORKS
-      </span>
+      <Image
+        src={src}
+        alt="Jakin Works logo"
+        width={170}
+        height={52}
+        priority
+        className="logo-image"
+      />
     </Link>
   );
 }
@@ -128,6 +131,7 @@ export function SiteFooter() {
             <Link href="/projects">Work</Link>
             <Link href="/services">Services</Link>
             <Link href="/materials">Materials</Link>
+            <Link href="/shop">Shop</Link>
             <Link href="/journal">Journal</Link>
             <Link href="/about">About</Link>
           </div>
