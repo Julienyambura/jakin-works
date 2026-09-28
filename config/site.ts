@@ -5,7 +5,7 @@ export const siteConfig = {
   location: "Nairobi, Kenya",
   phone: "",
   whatsapp: "",
-  email: "",
+  email: "hello@jakinworks.com",
   instagram: "",
   facebook: "",
   tiktok: "",

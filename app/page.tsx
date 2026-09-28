@@ -49,6 +49,18 @@ const capabilities = [
   ],
 ];
 
+const capabilityImages = [
+  "https://images.pexels.com/photos/17683176/pexels-photo-17683176.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/10096829/pexels-photo-10096829.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/8983882/pexels-photo-8983882.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/7587884/pexels-photo-7587884.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/30711607/pexels-photo-30711607.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/36397940/pexels-photo-36397940.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/17180807/pexels-photo-17180807.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/36215204/pexels-photo-36215204.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/13296061/pexels-photo-13296061.jpeg?auto=compress&cs=tinysrgb&w=900",
+];
+
 const materials = [
   [
     "01",
@@ -153,7 +165,7 @@ export default function Home() {
           id="capabilities"
         >
           <div className="container">
-            <Eyebrow>Core Services</Eyebrow>
+            <Eyebrow>Core Capabilities</Eyebrow>
             <h2>Capabilities</h2>
             <p className="section-intro">
               Every piece designed and fabricated to your home&apos;s
@@ -162,6 +174,13 @@ export default function Home() {
             <div className="capability-grid">
               {capabilities.map(([label, title, text], index) => (
                 <article className="capability-card" key={title}>
+                  <div
+                    className="photo-placeholder capability-photo"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(23, 25, 27, 0.08), rgba(23, 25, 27, 0.28)), url("${capabilityImages[index]}")`,
+                    }}
+                    aria-hidden="true"
+                  />
                   <span className="card-label">{label}</span>
                   <span className="card-number">0{index + 1}</span>
                   <h3>{title}</h3>
@@ -263,6 +282,22 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="artifact-section projects-section" id="projects">
+          <div className="container">
+            <Eyebrow>Projects</Eyebrow>
+            <h2>Work worth documenting.</h2>
+            <p className="section-intro">
+              Our portfolio is still being assembled. Completed commissions and
+              project stories will appear here as photography and details become
+              available.
+            </p>
+            <div className="project-status">
+              <span>Portfolio in progress</span>
+              <Link href="/projects">See the projects section →</Link>
+            </div>
+          </div>
+        </section>
+
         <section className="artifact-section journal-section" id="journal">
           <div className="container">
             <Eyebrow>Journal</Eyebrow>
@@ -274,7 +309,7 @@ export default function Home() {
             <div className="field-notes">
               <article>
                 <span>Materials</span>
-                <small>20 Sep 2026 · 6 min read</small>
+                <small> 2026 · </small>
                 <h3>
                   Choosing the Right Metal for Your Gate: A Homeowner&apos;s
                   Guide

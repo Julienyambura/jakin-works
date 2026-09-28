@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 248" role="img" aria-labelledby="title desc">
+  <title id="title">Jakin Works</title>
+  <desc id="desc">Jakin Works precision craftsmanship logo</desc>
+  <rect width="520" height="248" fill="#2c2f33"/>
+  <rect x="120" y="28" width="280" height="18" fill="#f8f4ed"/>
+  <text x="260" y="122" fill="#f8f4ed" font-family="Georgia, serif" font-size="66" font-weight="700" text-anchor="middle">JW</text>
+  <rect x="120" y="140" width="280" height="18" fill="#c87550"/>
+  <text x="260" y="202" fill="#f8f4ed" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="10" text-anchor="middle">JAKIN WORKS</text>
+  <text x="260" y="229" fill="#bcb8b0" font-family="monospace" font-size="13" letter-spacing="4" text-anchor="middle">PRECISION CRAFTSMANSHIP</text>
+</svg>

@@ -19,6 +19,14 @@ export default function JournalPage() {
             {journalArticles.map((article) => (
               <article className="journal-list-item" key={article.slug}>
                 <div>
+                  <div
+                    className="photo-placeholder journal-photo"
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(rgba(23, 25, 27, 0.08), rgba(23, 25, 27, 0.3)), url("https://images.pexels.com/photos/3769146/pexels-photo-3769146.jpeg?auto=compress&cs=tinysrgb&w=900")',
+                    }}
+                    aria-hidden="true"
+                  />
                   <span className="journal-label">{article.category} · {article.readTime}</span>
                   <h2>{article.title}</h2>
                   <p>{article.excerpt}</p>

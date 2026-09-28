@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   description:
     "Jakin Works Ltd is a Nairobi-based architectural fabrication company specialising in bespoke mild steel, stainless steel and aluminium fabrication.",
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    apple: [{ url: "/logo.png", type: "image/png" }],
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png", type: "image/png" }],
   },
   openGraph: {
     title: "Jakin Works Ltd",

@@ -238,7 +238,7 @@ export function MaterialsPage() {
 export function ProjectsPage() {
   return (
     <PageFrame
-      eyebrow="Fabrication possibilities"
+      eyebrow="Projects"
       title={
         <>
           What we build
@@ -246,13 +246,13 @@ export function ProjectsPage() {
           is made to last.
         </>
       }
-      intro="Real project photography is being collected. For now, explore the applications and material directions Jakin Works is set up to fabricate."
+      intro="Our project portfolio is taking shape. While we gather completed work, this is where future commissions, project stories and installation photography will live."
     >
       <section className="section">
         <div className="container">
           <div className="filter-row">
-            <span>Applications</span>
-            <span>All · Gates · Doors · Railings · Stairs · Screens · CNC</span>
+            <span>Portfolio in progress</span>
+            <span>Gates · Doors · Railings · Stairs · Screens · CNC</span>
           </div>
           <div className="project-list">
             {[
@@ -268,7 +268,7 @@ export function ProjectsPage() {
                 <div>
                   <Eyebrow>Application 0{index + 1}</Eyebrow>
                   <h2>{item}</h2>
-                  <p>Fabrication possibility · Visual placeholder</p>
+                  <p>Project details and photography coming soon.</p>
                 </div>
               </article>
             ))}
@@ -299,16 +299,16 @@ export function ContactPage() {
             <p>Nairobi, Kenya</p>
             <div className="contact-list">
               <span>
-                Phone <b>Coming soon</b>
+                Phone <b></b>
               </span>
               <span>
-                WhatsApp <b>Coming soon</b>
+                WhatsApp <b></b>
               </span>
               <span>
-                Email <b>Coming soon</b>
+                Email <b></b>
               </span>
               <span>
-                Instagram <b>Coming soon</b>
+                Instagram <b></b>
               </span>
             </div>
           </div>
@@ -340,8 +340,8 @@ export function QuotePage() {
               title="Start with the brief."
             />
             <p className="form-note">
-              Required fields are marked with an asterisk. A submission handler
-              can be connected to your preferred email or form service.
+              Required fields are marked with an asterisk. Submitting opens your
+              email app with the enquiry addressed to our studio inbox.
             </p>
           </div>
           <QuoteForm />

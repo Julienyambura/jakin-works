@@ -9,13 +9,14 @@ const navItems = [
   ["About", "/#about"],
   ["Capabilities", "/#capabilities"],
   ["Materials", "/#materials"],
+  ["Projects", "/projects"],
   ["Shop", "/shop"],
   ["Journal", "/#journal"],
   ["Contact", "/#contact"],
 ];
 
 export function Logo({ light = false }: { light?: boolean }) {
-  const src = light ? "/footer logo .png" : "/logo.png";
+  const src = light ? "/footer-logo.svg" : "/navbar-logo.png";
 
   return (
     <Link
@@ -26,8 +27,8 @@ export function Logo({ light = false }: { light?: boolean }) {
       <Image
         src={src}
         alt="Jakin Works logo"
-        width={170}
-        height={52}
+        width={light ? 520 : 392}
+        height={light ? 248 : 289}
         priority
         className="logo-image"
       />
@@ -128,8 +129,8 @@ export function SiteFooter() {
         <div className="footer-links">
           <div>
             <Eyebrow>Explore</Eyebrow>
-            <Link href="/projects">Work</Link>
-            <Link href="/services">Services</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/services">Capabilities</Link>
             <Link href="/materials">Materials</Link>
             <Link href="/shop">Shop</Link>
             <Link href="/journal">Journal</Link>
@@ -156,8 +157,25 @@ export function SiteFooter() {
 }
 
 export function QuoteForm({ contact = false }: { contact?: boolean }) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const subject = contact ? "Jakin Works enquiry" : "Jakin Works quote request";
+    const body = [
+      `Name: ${form.get("name") || ""}`,
+      `Phone: ${form.get("phone") || ""}`,
+      `Email: ${form.get("email") || ""}`,
+      `Project type: ${form.get("projectType") || ""}`,
+      "",
+      `${contact ? "Enquiry" : "Project description"}:`,
+      `${form.get("message") || ""}`,
+    ].join("\n");
+
+    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   return (
-    <form className="quote-form" onSubmit={(event) => event.preventDefault()}>
+    <form className="quote-form" onSubmit={handleSubmit}>
       <div className="form-row">
         <label>
           {contact ? "Full name" : "Full name *"}
@@ -212,6 +230,7 @@ export function QuoteForm({ contact = false }: { contact?: boolean }) {
         {contact ? "Send enquiry" : "Request a quote"}
         <span>↗</span>
       </button>
+      <p className="form-note">Submitting opens your email app addressed to {siteConfig.email}.</p>
     </form>
   );
 }
