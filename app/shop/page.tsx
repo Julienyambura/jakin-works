@@ -1,36 +1,43 @@
 import { Button, Eyebrow } from "@/components/site";
 import { PageFrame } from "@/components/pages";
+import { media } from "@/config/media";
 
 const products = [
   {
     title: "Standard steel gates",
     copy: "Proportioned, durable gate designs fabricated to your opening and finished for the conditions on site.",
     type: "Exterior",
+    image: media.shop.gates,
   },
   {
     title: "Steel and aluminium doors",
     copy: "Reliable entry and interior door pieces available in considered standard profiles and finishes.",
     type: "Doors",
+    image: media.shop.doors,
   },
   {
     title: "Windows and opening sections",
     copy: "Clean-lined window frames and opening sections fabricated to suit glazing, ventilation and light.",
     type: "Windows",
+    image: media.shop.windows,
   },
   {
     title: "Brushed brass pulls",
     copy: "Interior cabinet and door pulls designed for durable, understated impact.",
     type: "Interior",
+    image: media.shop.hardware,
   },
   {
     title: "Metal furniture and swings",
     copy: "Tables, benches, frames and swings made as repeatable pieces or developed around your own design.",
     type: "Custom pieces",
+    image: media.shop.customPieces,
   },
   {
     title: "Gate hardware kit",
     copy: "Hand-finished hinges, latches and mounting hardware for refined, secure detailing.",
     type: "Hardware",
+    image: media.shop.finishing,
   },
 ];
 
@@ -51,7 +58,12 @@ export default function ShopPage() {
         <div className="container shop-layout">
           {products.map((product) => (
             <article className="shop-item" key={product.title}>
-              <div className="photo-placeholder">
+              <div
+                className="photo-placeholder shop-photo"
+                style={{ backgroundImage: `url("${product.image}")` }}
+                role="img"
+                aria-label={`${product.title} sample`}
+              >
                 <span>{product.type}</span>
                 <small>Featured piece</small>
               </div>

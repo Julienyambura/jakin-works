@@ -5,11 +5,13 @@ import {
   SiteFooter,
   SiteHeader,
 } from "@/components/site";
+import { mediaForSlug } from "@/config/media";
 
 type Props = { params: Promise<{ slug: string }> };
 export default async function ServiceDetail({ params }: Props) {
   const { slug } = await params;
   const title = slug.replaceAll("-", " ");
+  const image = mediaForSlug(slug);
   return (
     <>
       <SiteHeader />
@@ -38,8 +40,12 @@ export default async function ServiceDetail({ params }: Props) {
               </p>
               <Button href="/request-a-quote">Request a quote</Button>
             </div>
-            <div className="visual">
-              <span className="visual-label">Visual placeholder</span>
+            <div
+              className="visual"
+              style={{ backgroundImage: `url("${image}")` }}
+              role="img"
+              aria-label={`${title} fabrication work`}
+            >
             </div>
           </div>
         </section>

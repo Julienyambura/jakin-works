@@ -142,7 +142,8 @@ a { color: inherit; text-decoration: none; }
 .article-body .prose { margin-left: 25%; }
 .prose p { max-width: 520px; color: var(--stone); font-size: 13px; line-height: 1.9; }
 .detail-grid { border-top: 1px solid var(--rule); }
-.detail-row { display: grid; grid-template-columns: 70px 1fr 40px; gap: 20px; padding: 34px 0; border-bottom: 1px solid var(--rule); }
+.detail-row { display: grid; grid-template-columns: 70px 150px 1fr 40px; gap: 20px; padding: 34px 0; border-bottom: 1px solid var(--rule); }
+.detail-row-image { width: 150px; min-height: 150px; background-position: center; background-size: cover; }
 .detail-row > span { color: var(--oxide); font-size: 11px; }
 .detail-row h2 { margin: 0 0 15px; font: 400 46px/1 var(--font-display); text-transform: uppercase; }
 .detail-row p { max-width: 560px; margin: 0; color: var(--stone); font-size: 12px; line-height: 1.8; }
@@ -153,6 +154,7 @@ a { color: inherit; text-decoration: none; }
 .artifact-hero:before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.55; background: radial-gradient(circle at 39% 16%, rgba(245, 188, 110, 0.35) 0 9px, transparent 18px), radial-gradient(circle at 71% 28%, rgba(255, 194, 112, 0.48) 0 7px, transparent 17px), radial-gradient(circle at 84% 57%, rgba(255, 201, 100, 0.7) 0 6px, transparent 16px), radial-gradient(circle at 61% 68%, rgba(255, 179, 91, 0.65) 0 5px, transparent 14px); filter: blur(4px); }
 .artifact-hero:after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 4px; background: linear-gradient(90deg, #55d9b0, #4ba8d9, #cb62e7); }
 .artifact-hero-grid, .split-section { display: grid; grid-template-columns: 1fr 0.72fr; gap: 10%; align-items: end; }
+.hero-image { min-height: 430px; border: 1px solid rgba(248, 244, 237, 0.45); background-position: center; background-size: cover; box-shadow: 18px 18px 0 rgba(23, 25, 27, 0.25); }
 .artifact-hero h1, .artifact-section h2 { max-width: 850px; margin: 0; font: 600 clamp(42px, 4.6vw, 68px)/0.98 var(--font-display); letter-spacing: -0.02em; text-transform: uppercase; }
 .artifact-hero > .container { position: relative; z-index: 1; }
 .artifact-hero .eyebrow, .artifact-hero .hero-materials { color: #e6b56f; }
@@ -252,6 +254,9 @@ a { color: inherit; text-decoration: none; }
 .shop-layout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .shop-item { display: flex; flex-direction: column; min-height: 340px; padding: 22px; border: 1px solid var(--rule); background: var(--oyster); }
 .shop-item .photo-placeholder { margin: -22px -22px 22px; min-height: 150px; }
+.shop-photo { background-position: center; background-size: cover; }
+.visual { min-height: 440px; background-color: #e3d8cb; background-position: center; background-size: cover; }
+.project-image { min-height: 260px; background-position: center; background-size: cover; }
 .shop-item h3 { margin: 0 0 12px; font-size: clamp(28px, 3vw, 38px); }
 .shop-item p { margin: 0; color: var(--stone); font-size: 15px; line-height: 1.7; }
 .shop-item .price { padding-top: 22px; color: var(--oxide); font: 600 24px var(--font-display); }
@@ -286,6 +291,7 @@ a { color: inherit; text-decoration: none; }
   .journal-card--featured { grid-column: span 2; }
   .artifact-hero-grid, .split-section { grid-template-columns: 1fr; gap: 55px; }
   .artifact-hero { padding-top: 165px; }
+  .hero-image { min-height: 300px; }
   .artifact-hero h1, .artifact-section h2 { font-size: clamp(40px, 7vw, 58px); }
   .hero-placeholder { min-height: 280px; }
   .capability-grid, .project-grid { grid-template-columns: repeat(2, 1fr); }
@@ -296,6 +302,8 @@ a { color: inherit; text-decoration: none; }
   .shop-grid, .shop-layout { grid-template-columns: 1fr; }
   .shop-intro { flex-direction: column; align-items: flex-start; }
   .quote-layout, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .detail-row { grid-template-columns: 42px 110px 1fr 28px; gap: 12px; }
+  .detail-row-image { width: 110px; min-height: 110px; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
@@ -326,6 +334,8 @@ a { color: inherit; text-decoration: none; }
   .journal-grid { display: block; margin-top: 45px; }
   .journal-card { min-height: 220px; margin-bottom: 12px; }
   .journal-list-item { display: block; }
+  .detail-row { grid-template-columns: 42px 1fr 28px; }
+  .detail-row-image { grid-column: 2; width: 100%; min-height: 180px; }
   .journal-list-item > a { display: inline-block; margin-top: 25px; }
   .article-body .prose { margin-left: 0; }
   .artifact-section { padding: 82px 0; }

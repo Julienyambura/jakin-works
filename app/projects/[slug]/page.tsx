@@ -1,9 +1,11 @@
 import { Button, Eyebrow, SiteFooter, SiteHeader } from "@/components/site";
+import { mediaForSlug } from "@/config/media";
 
 type Props = { params: Promise<{ slug: string }> };
 export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params;
   const title = slug.replaceAll("-", " ");
+  const image = mediaForSlug(slug);
   return (
     <>
       <SiteHeader />
@@ -13,15 +15,19 @@ export default async function ProjectDetail({ params }: Props) {
             <Eyebrow>Fabrication application</Eyebrow>
             <h1>{title}.</h1>
             <p>
-              Visual placeholder. Real Jakin Works project photography and
-              project information will be added as the portfolio is supplied.
+              A Jakin Works fabrication application, made to the drawing and
+              finished for the setting.
             </p>
           </div>
         </section>
         <section className="section">
           <div className="container intro-grid">
-            <div className="visual visual--detail">
-              <span className="visual-label">Visual placeholder</span>
+            <div
+              className="visual visual--detail"
+              style={{ backgroundImage: `url("${image}")` }}
+              role="img"
+              aria-label={`${title} fabrication project`}
+            >
             </div>
             <div>
               <Eyebrow>Application overview</Eyebrow>

@@ -6,6 +6,7 @@ import {
   SiteFooter,
   SiteHeader,
 } from "@/components/site";
+import { media } from "@/config/media";
 
 export function PageFrame({
   eyebrow,
@@ -37,14 +38,14 @@ export function PageFrame({
 }
 
 const services = [
-  "Security & perimeter",
-  "Doors & entryways",
-  "Windows & openings",
-  "Outdoor living",
-  "Interior features",
-  "Structural & support",
-  "CNC & decorative metalwork",
-  "Finishing & installation",
+  ["Security & perimeter", media.capabilities.security],
+  ["Doors & entryways", media.capabilities.doors],
+  ["Windows & openings", media.capabilities.windows],
+  ["Outdoor living", media.capabilities.outdoorLiving],
+  ["Interior features", media.capabilities.interiorFeatures],
+  ["Structural & support", media.capabilities.structural],
+  ["CNC & decorative metalwork", media.capabilities.cnc],
+  ["Finishing & installation", media.capabilities.finishing],
 ];
 export function ServicesPage() {
   return (
@@ -61,9 +62,14 @@ export function ServicesPage() {
     >
       <section className="section">
         <div className="container detail-grid">
-          {services.map((service, index) => (
+          {services.map(([service, image], index) => (
             <article className="detail-row" key={service}>
               <span>0{index + 1}</span>
+              <div
+                className="detail-row-image"
+                style={{ backgroundImage: `url("${image}")` }}
+                aria-hidden="true"
+              />
               <div>
                 <h2>{service}</h2>
                 <p>
@@ -107,8 +113,12 @@ export function AboutPage() {
     >
       <section className="section">
         <div className="container intro-grid">
-          <div className="visual visual--detail">
-            <span className="visual-label">Visual placeholder</span>
+          <div
+            className="visual visual--detail"
+            style={{ backgroundImage: `url("${media.about}")` }}
+            role="img"
+            aria-label="Jakin Works workshop"
+          >
           </div>
           <div className="prose">
             <Eyebrow>Our story</Eyebrow>
@@ -256,18 +266,23 @@ export function ProjectsPage() {
           </div>
           <div className="project-list">
             {[
-              "Gates",
-              "Doors & entryways",
-              "Staircases",
-              "Architectural screens",
-              "Outdoor structures",
-              "Structural steel",
+              ["Gates", media.projects.gates],
+              ["Doors & entryways", media.projects.doors],
+              ["Staircases", media.projects.staircases],
+              ["Architectural screens", media.projects.screens],
+              ["Outdoor structures", media.projects.outdoorStructures],
+              ["Structural steel", media.projects.structural],
             ].map((item, index) => (
-              <article className="project-item" key={item}>
-                <div className={`project-image project-image--${index + 1}`} />
+              <article className="project-item" key={item[0]}>
+                <div
+                  className={`project-image project-image--${index + 1}`}
+                  style={{ backgroundImage: `url("${item[1]}")` }}
+                  role="img"
+                  aria-label={`${item[0]} fabrication project`}
+                />
                 <div>
                   <Eyebrow>Application 0{index + 1}</Eyebrow>
-                  <h2>{item}</h2>
+                  <h2>{item[0]}</h2>
                   <p>Project details and photography coming soon.</p>
                 </div>
               </article>

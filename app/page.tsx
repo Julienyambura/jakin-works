@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button, Eyebrow, SiteFooter, SiteHeader } from "@/components/site";
+import { media } from "@/config/media";
 
 const capabilities = [
   [
@@ -50,15 +51,15 @@ const capabilities = [
 ];
 
 const capabilityImages = [
-  "https://images.pexels.com/photos/17683176/pexels-photo-17683176.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/10096829/pexels-photo-10096829.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/8983882/pexels-photo-8983882.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/7587884/pexels-photo-7587884.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/30711607/pexels-photo-30711607.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/36397940/pexels-photo-36397940.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/17180807/pexels-photo-17180807.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/36215204/pexels-photo-36215204.jpeg?auto=compress&cs=tinysrgb&w=900",
-  "https://images.pexels.com/photos/13296061/pexels-photo-13296061.jpeg?auto=compress&cs=tinysrgb&w=900",
+  media.capabilities.security,
+  media.capabilities.doors,
+  media.capabilities.windows,
+  media.capabilities.outdoorLiving,
+  media.capabilities.interiorFeatures,
+  media.capabilities.structural,
+  media.capabilities.cnc,
+  media.capabilities.finishing,
+  media.capabilities.maintenance,
 ];
 
 const materials = [
@@ -112,7 +113,12 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="top">
-        <section className="artifact-hero">
+        <section
+          className="artifact-hero"
+          style={{
+            backgroundImage: `linear-gradient(rgba(43, 33, 30, 0.72), rgba(112, 50, 31, 0.72)), url("${media.hero}")`,
+          }}
+        >
           <div className="container artifact-hero-grid">
             <div>
               <Eyebrow>Bespoke Metal Fabrication · Nairobi</Eyebrow>
@@ -133,6 +139,12 @@ export default function Home() {
                 </Button>
               </div>
             </div>
+            <div
+              className="hero-image"
+              style={{ backgroundImage: `url("${media.hero}")` }}
+              role="img"
+              aria-label="Jakin Works architectural metalwork"
+            />
           </div>
         </section>
 
