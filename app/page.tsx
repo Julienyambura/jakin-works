@@ -1,111 +1,110 @@
 import Link from "next/link";
 import { Button, Eyebrow, SiteFooter, SiteHeader } from "@/components/site";
+import { journalArticles } from "@/config/journal";
 import { media } from "@/config/media";
+import { JournalArticleLink } from "@/components/journal";
 
 const capabilities = [
   [
-    "Security",
     "Security & Perimeter",
     "Gates, grilles and perimeter features that secure the home without compromising its design.",
+    media.capabilities.security,
   ],
   [
-    "Doors",
     "Doors & Entryways",
     "Entrance and interior doors fabricated to the frame opening, in any of our four materials.",
+    media.capabilities.doors,
   ],
   [
-    "Windows",
     "Windows",
     "Steel and aluminium window sections detailed to hold glazing precisely to spec.",
+    media.capabilities.windows,
   ],
   [
-    "Outdoor Living",
     "Outdoor Living",
     "Pergolas, patio and balcony structures fabricated for Nairobi's outdoor lifestyle.",
+    media.capabilities.outdoorLiving,
   ],
   [
-    "Interior Features",
     "Interior Features",
     "Railings, balustrades and interior metal detailing built to code and to the drawing.",
+    media.capabilities.interiorFeatures,
   ],
   [
-    "Structural",
     "Structural Work",
     "Load-bearing steel elements fabricated and finished to engineering specification.",
+    media.capabilities.structural,
   ],
   [
-    "CNC Cutting",
     "CNC Cutting",
     "Precision-cut decorative panels, facades and patterned screens, cut to exact digital spec.",
+    media.capabilities.cnc,
   ],
   [
-    "Finishing",
     "Finishing Services",
     "Powder-coating, hand-finishing and polishing for a durable, considered surface.",
+    media.capabilities.finishing,
   ],
   [
-    "Maintenance",
     "Maintenance & Repair",
     "Servicing, repairs and refurbishment for existing metalwork, hardware and finishes.",
+    media.capabilities.maintenance,
   ],
-];
-
-const capabilityImages = [
-  media.capabilities.security,
-  media.capabilities.doors,
-  media.capabilities.windows,
-  media.capabilities.outdoorLiving,
-  media.capabilities.interiorFeatures,
-  media.capabilities.structural,
-  media.capabilities.cnc,
-  media.capabilities.finishing,
-  media.capabilities.maintenance,
 ];
 
 const materials = [
   [
-    "01",
     "Mild Steel",
     "The standard for gates, railings and structural work, powder-coated or hand-finished for a durable surface.",
   ],
   [
-    "02",
     "Stainless Steel",
     "Corrosion-resistant detailing for exposed and high-contact elements: handrails, hardware and weather-exposed installations.",
   ],
   [
-    "03",
     "Aluminium",
     "Lightweight, low-maintenance fabrication for large-format doors, windows and outdoor structures.",
   ],
   [
-    "04",
     "Wrought Iron",
     "Traditional, hand-worked detailing for decorative gates, balustrades and security features.",
   ],
+  [
+    "Timber",
+    "Hardwood doors, flooring, staircases and cabinetry, the first offering of our upcoming Woodworks division.",
+  ],
 ];
 
-const process = [
+const steps = [
   [
-    "01",
-    "Drawing & Spec",
-    "We work from your architect's drawings, or take our own measured drawings on site. Dimensions, tolerances and finish are agreed before any metal is cut.",
+    "Choose a design",
+    "Start from our signature designs or bring a sketch, reference photo or architect's drawing.",
   ],
   [
-    "02",
-    "Fabrication",
-    "Cut, welded and assembled in the workshop to the drawing, in mild steel, stainless steel, aluminium or wrought iron.",
+    "Measure & detail",
+    "We visit site, take exact measurements and prepare drawings showing dimensions, materials and finish.",
   ],
   [
-    "03",
-    "Finish",
-    "Powder-coating, hand-finishing or polishing, matched to the material and the setting.",
+    "Quote & deposit",
+    "One clear written quote covers design, materials, fabrication, finishing and installation.",
   ],
   [
-    "04",
-    "Install",
-    "Fitted on site to the tolerances the drawing specified. No rework, no surprises for you or your contractor.",
+    "Craft in the workshop",
+    "Your piece is cut, welded, assembled and finished by skilled fabricators with engineering checks throughout.",
   ],
+  [
+    "Install & hand over",
+    "We install on site, check against the approved drawing, clean up and walk you through simple care.",
+  ],
+];
+
+const projects = [
+  ["Sliding Driveway Gate", "Security & Perimeter", media.projects.gates],
+  ["Staircase Balustrade", "Interior", media.projects.staircases],
+  ["Perforated Facade Screen", "CNC Cutting", media.projects.screens],
+  ["Outdoor Pergola", "Outdoor Living", media.projects.outdoorStructures],
+  ["Entrance Door", "Doors", media.projects.doors],
+  ["Window Grilles", "Windows", media.projects.structural],
 ];
 
 export default function Home() {
@@ -116,58 +115,59 @@ export default function Home() {
         <section
           className="artifact-hero"
           style={{
-            backgroundImage: `linear-gradient(rgba(43, 33, 30, 0.72), rgba(112, 50, 31, 0.72)), url("${media.hero}")`,
+            backgroundImage: `linear-gradient(90deg, rgba(23,25,27,.9), rgba(23,25,27,.6) 55%, rgba(23,25,27,.25)), url("${media.hero}")`,
           }}
         >
           <div className="container artifact-hero-grid">
+            <Eyebrow>Bespoke Metal Fabrication · Nairobi</Eyebrow>
+            <h1>Precision Craftsmanship for Exceptional Spaces</h1>
+            <p className="hero-materials">Mild Steel · Stainless Steel · Aluminium · Wrought Iron</p>
+            <p className="hero-description">Jakin Works designs and fabricates bespoke architectural metalwork: security, doors, windows, outdoor structures and interior detailing engineered to the drawing, for Nairobi&apos;s most exceptional homes.</p>
+            <div className="hero-actions"><Button href="#contact">Request a Quote</Button><Button href="#capabilities" variant="outline">View Capabilities</Button></div>
+          </div>
+        </section>
+
+        <section className="artifact-meta">
+          <div className="container artifact-meta-grid">
             <div>
-              <Eyebrow>Bespoke Metal Fabrication · Nairobi</Eyebrow>
-              <h1>Precision Craftsmanship for Exceptional Spaces</h1>
-              <p className="hero-materials">
-                Mild Steel · Stainless Steel · Aluminium · Wrought Iron
-              </p>
-              <p className="hero-description">
-                Jakin Works designs and fabricates bespoke architectural
-                metalwork security, doors, windows, outdoor structures and
-                interior detailing engineered to the drawing, for Nairobi&apos;s
-                most exceptional homes.
-              </p>
-              <div className="hero-actions">
-                <Button href="#contact">Request a Quote</Button>
-                <Button href="#capabilities" variant="outline">
-                  View Capabilities
-                </Button>
-              </div>
+              <span>WhatsApp / Phone</span>
+              <a href="https://wa.me/254181650805">+254 181 650 805</a>
             </div>
-            <div
-              className="hero-image"
-              style={{ backgroundImage: `url("${media.hero}")` }}
-              role="img"
-              aria-label="Jakin Works architectural metalwork"
-            />
+            <div>
+              <span>Workshop</span>
+              <strong>Membley Estate, Nairobi</strong>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href="mailto:jakinworksltd@gmail.com">
+                jakinworksltd@gmail.com
+              </a>
+            </div>
           </div>
         </section>
 
         <section className="artifact-section" id="about">
-          <div className="container split-section">
-            <div>
+          <div className="container about-home-grid">
+            <div className="about-home-copy">
               <Eyebrow>About Jakin Works</Eyebrow>
               <h2>Elevating Kenya&apos;s fabrication standard</h2>
-            </div>
-            <div>
               <p>
                 Jakin Works was founded to elevate Kenya&apos;s architectural
                 fabrication standards through precision, professionalism and
-                attention to detail — combining contemporary methods with
-                experienced craftsmen to create durable, refined products in
-                mild steel, stainless steel, aluminium and wrought iron.
+                attention to detail, combining contemporary methods with
+                experienced craftsmen to create durable, refined products.
               </p>
               <p>
                 Every commission is delivered on schedule, to spec, with the
-                process continually refined — for homeowners and for the
+                process continually refined for homeowners and for the
                 architects, contractors and quantity surveyors who bring us into
                 their projects.
               </p>
+            </div>
+            <div className="stat-grid">
+              <div><strong>4</strong><span>Materials worked</span></div>
+              <div><strong>9</strong><span>Core services</span></div>
+              <div><strong>100%</strong><span>Built to the drawing</span></div>
             </div>
           </div>
         </section>
@@ -177,29 +177,43 @@ export default function Home() {
           id="capabilities"
         >
           <div className="container">
-            <Eyebrow>Core Capabilities</Eyebrow>
+            <Eyebrow>Core Services</Eyebrow>
             <h2>Capabilities</h2>
             <p className="section-intro">
               Every piece designed and fabricated to your home&apos;s
-              architecture — not pulled from a catalogue.
+              architecture, not pulled from a catalogue.
             </p>
             <div className="capability-grid">
-              {capabilities.map(([label, title, text], index) => (
+              {capabilities.map(([title, text, image], index) => (
                 <article className="capability-card" key={title}>
                   <div
-                    className="photo-placeholder capability-photo"
+                    className="capability-photo"
                     style={{
-                      backgroundImage: `linear-gradient(rgba(23, 25, 27, 0.08), rgba(23, 25, 27, 0.28)), url("${capabilityImages[index]}")`,
+                      backgroundImage: `linear-gradient(rgba(23,25,27,.05), rgba(23,25,27,.28)), url("${image}")`,
                     }}
-                    aria-hidden="true"
                   />
-                  <span className="card-label">{label}</span>
                   <span className="card-number">0{index + 1}</span>
                   <h3>{title}</h3>
                   <p>{text}</p>
                   <Link href="#contact">Ask About This →</Link>
                 </article>
               ))}
+            </div>
+            <div
+              className="woodworks-banner"
+              style={{
+                backgroundImage: `linear-gradient(90deg, rgba(168,86,53,.95), rgba(168,86,53,.55)), url("${media.about}")`,
+              }}
+            >
+              <div>
+                <Eyebrow>Coming Soon</Eyebrow>
+                <h3>Woodworks Division</h3>
+                <p>
+                  Hardwood doors, flooring, staircases, cabinetry and wood-metal
+                  combination features, launching as a companion to our
+                  metalwork.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -209,15 +223,15 @@ export default function Home() {
             <Eyebrow>Materials Index</Eyebrow>
             <h2>Four materials, one standard</h2>
             <p className="section-intro">
-              Every piece is fabricated to the same precision standard,
-              regardless of material — chosen for the location, exposure and
-              finish the drawing calls for.
+              Every piece is fabricated to the same precision standard, chosen
+              for the location, exposure and finish the drawing calls for.
             </p>
-            <div className="material-index">
-              {materials.map(([number, title, text]) => (
-                <article key={title}>
-                  <span>{number}</span>
+            <div className="indexed-rows indexed-rows--materials">
+              {materials.map(([title, text], index) => (
+                <article className="indexed-row" key={title}>
+                  <span className="indexed-row__number">0{index + 1}</span>
                   <h3>{title}</h3>
+                  {title === "Timber" && <em>Coming Soon</em>}
                   <p>{text}</p>
                 </article>
               ))}
@@ -228,84 +242,125 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="artifact-section shop-section" id="shop">
+        <section className="artifact-section process-section" id="process">
           <div className="container">
-            <div className="shop-intro">
-              <div>
-                <Eyebrow>Shop</Eyebrow>
-                <h2>Small-batch pieces for the details that matter.</h2>
-              </div>
-              <Button href="/shop" variant="outline">
-                Visit the Shop
-              </Button>
-            </div>
+            <Eyebrow>How We Work</Eyebrow>
+            <h2>From first idea to final fit</h2>
             <p className="section-intro">
-              A curated space for useful hardware, finishing details and
-              functional favourites chosen to complement architectural metalwork
-              and everyday living.
+              Pick from our own signature designs or bring your own idea. Either
+              way, the journey is clear and you&apos;ll always know what happens
+              next.
             </p>
-            <div className="shop-grid">
-              <article className="shop-card shop-card--featured">
-                <span className="shop-label">Best seller</span>
-                <h3>Custom gate hardware kit</h3>
-                <p>
-                  Handles, hinges and fixings designed to match fitted gates and
-                  exterior detailing.
-                </p>
-                <Link href="/shop">Explore →</Link>
-              </article>
-              <article className="shop-card">
-                <span className="shop-label">Interior</span>
-                <h3>Brushed brass pulls</h3>
-                <p>Refined, durable pulls for cabinetry and interior doors.</p>
-                <Link href="/shop">View →</Link>
-              </article>
-              <article className="shop-card">
-                <span className="shop-label">Outdoor</span>
-                <h3>Powder-coat finish cards</h3>
-                <p>
-                  Colour and finish guidance for outdoor gates, railings and
-                  metalwork.
-                </p>
-                <Link href="/shop">See details →</Link>
-              </article>
-            </div>
+            <ol className="indexed-rows indexed-rows--process">
+              {steps.map(([title, text], index) => (
+                <li className="indexed-row" key={title}>
+                  <span className="indexed-row__number">0{index + 1}</span>
+                  <h3>{title}</h3>
+                  <div>
+                    <p>{text}</p>
+                    <strong>You get: A clear next step</strong>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
-        <section className="artifact-section process-section">
-          <div className="container">
-            <Eyebrow>How We Work</Eyebrow>
-            <h2>Built to the Drawing</h2>
-            <p className="section-intro">
-              Every commission moves through the same four stages, whether it
-              comes from a homeowner&apos;s brief or an architect&apos;s drawing
-              set.
+        <section className="why-reference" id="why">
+          <div className="container why-reference__inner">
+            <Eyebrow>Why Work With Us</Eyebrow>
+            <h2>Engineered properly. Finished beautifully.</h2>
+            <p className="why-reference__intro">
+              Jakin Works is led by engineers, not just fabricators. Every gate,
+              door, railing and structure is designed to perform as well as it
+              looks — then built on modern machinery and finished by hand.
             </p>
-            <div className="process-index">
-              {process.map(([number, title, text]) => (
-                <article key={number}>
-                  <span>{number}</span>
+            <div className="why-reference__rail">
+              {["Engineer-Designed", "Precision-Cut", "Hand-Finished", "Quality-Checked"].map((item, index) => (
+                <span key={item}><b>0{index + 1}</b> {item}</span>
+              ))}
+            </div>
+            <div className="why-reference__cards">
+              {[
+                ["△", "Engineer-Led", "Our founder's mechanical engineering background, backed by structural engineers on the team, means loads, spans, hinges and fixings are calculated — not guessed. Gates swing true; balustrades stay solid."],
+                ["☼", "Modern Precision Machinery", "CNC cutting and modern fabrication equipment deliver clean edges, tight tolerances and intricate patterns — cut to the same accuracy, every time."],
+                ["⌁", "Bespoke Craftsmanship", "Nothing comes from a catalogue. Every piece is designed around your home's architecture, then welded, ground and finished by skilled hands."],
+                ["♢", "End-to-End Quality Control", "Material, cut, weld, finish and fit are each checked against the approved drawing — in the workshop, and again on site before handover."],
+                ["•••", "One Team, Design to Install", "Our signature designs or yours, then fabrication, finishing and installation under one roof — one point of contact, one team accountable from first sketch to final fit."],
+                ["⚒", "Built to Last", "Materials and protective finishes are chosen for Nairobi's strong sun and rainy seasons. If anything needs attention years later, maintenance is a call away."],
+              ].map(([icon, title, text]) => (
+                <article key={title}>
+                  <span className="why-reference__icon" aria-hidden="true">{icon}</span>
                   <h3>{title}</h3>
                   <p>{text}</p>
                 </article>
               ))}
+            </div>
+            <div className="engineer-callout">
+              <Eyebrow>An Engineer&apos;s Eye for Detail</Eyebrow>
+              <h3>Built by someone who has done the calculations.</h3>
+              <p>Our founder comes from a mechanical engineering background — and it shows in the details most fabricators skip: hinges and posts sized for the real weight of a four-metre gate leaf, room left for long runs of steel to expand in the afternoon sun, drainage in hollow sections so they do not rust from the inside, and fixings matched to the wall they go into.</p>
+              <div><Button href="#contact" variant="light">Start a Project</Button><Button href="https://wa.me/254181650805" variant="outline">WhatsApp Us</Button></div>
             </div>
           </div>
         </section>
 
         <section className="artifact-section projects-section" id="projects">
           <div className="container">
-            <Eyebrow>Projects</Eyebrow>
-            <h2>Work worth documenting.</h2>
+            <Eyebrow>Portfolio</Eyebrow>
+            <h2>Featured Projects</h2>
             <p className="section-intro">
-              Our portfolio is still being assembled. Completed commissions and
-              project stories will appear here as photography and details become
-              available.
+              Every installation we complete is added here as it is handed over.
+              These references show the style and calibre of work we take on.
             </p>
-            <div className="project-status">
-              <span>Portfolio in progress</span>
-              <Link href="/projects">See the projects section →</Link>
+            <div className="project-grid">
+              {projects.map(([title, category, image]) => (
+                <article className="project-card" key={title}>
+                  <div
+                    className="project-image"
+                    style={{ backgroundImage: `url("${image}")` }}
+                  />
+                  <strong>{category}</strong>
+                  <p>{title}</p>
+                </article>
+              ))}
+            </div>
+            <p className="project-status">
+              Planning something similar?{" "}
+              <Link href="#contact">Tell us about your project →</Link>
+            </p>
+          </div>
+        </section>
+
+        <section className="artifact-section shop-section" id="shop">
+          <div className="container">
+            <Eyebrow>Retail & Custom Pieces</Eyebrow>
+            <h2>The Jakin Shop</h2>
+            <p className="section-intro">
+              Beyond architectural commissions, our workshop makes smaller metal
+              pieces for the home and garden, in-stock designs or built to your
+              own.
+            </p>
+            <div className="shop-grid">
+              {[
+                ["Metal Wall Art", media.shop.customPieces],
+                ["Sculpture & Statement Pieces", media.shop.gates],
+                ["Custom Furniture", media.shop.hardware],
+              ].map(([title, image]) => (
+                <article className="shop-card" key={title}>
+                  <div
+                    className="shop-photo"
+                    style={{ backgroundImage: `url("${image}")` }}
+                  />
+                  <span className="shop-label">Price on enquiry</span>
+                  <h3>{title}</h3>
+                  <p>
+                    Made to order in our workshop, in the same four materials
+                    and finished to suit your space.
+                  </p>
+                  <a href="https://wa.me/254181650805">Enquire on WhatsApp →</a>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -315,55 +370,80 @@ export default function Home() {
             <Eyebrow>Journal</Eyebrow>
             <h2>Field Notes</h2>
             <p className="section-intro">
-              Notes on materials, process and maintenance — written to help you
-              make informed decisions about the metalwork in your home.
+              Notes on materials, process and maintenance to help you make
+              informed decisions about the metalwork in your home.
             </p>
             <div className="field-notes">
-              <article>
-                <span>Materials</span>
-                <small> 2026 · </small>
-                <h3>
-                  Choosing the Right Metal for Your Gate: A Homeowner&apos;s
-                  Guide
-                </h3>
-                <p>
-                  Mild steel, stainless steel, aluminium or wrought iron — what
-                  actually changes with each, and how to decide.
-                </p>
-                <Link href="/journal/choosing-the-right-metal-for-your-gate">
-                  Read Article →
-                </Link>
+              {journalArticles.map((article) => (
+                <article key={article.slug} style={{ backgroundImage: `linear-gradient(180deg, rgba(23,25,27,.05), rgba(23,25,27,.86)), url("${article.image}")` }}>
+                  <span>{article.category}</span>
+                  <small>{article.date} · {article.readTime}</small>
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                  <JournalArticleLink article={article} />
+                </article>
+              ))}
+              <article className="journal-ask-card">
+                <span>Ask the workshop</span>
+                <h3>Got a question about metalwork for your home?</h3>
+                <p>Tell us what you would like to understand: materials, finishes, costs or maintenance.</p>
+                <a href="https://wa.me/254181650805">Send a question →</a>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="artifact-section quote-section">
-          <div className="container split-section">
-            <div>
-              <Eyebrow>Why Jakin Works</Eyebrow>
-              <h2>Precision for the people who notice it</h2>
-            </div>
-            <div className="principles-grid">
+        <section className="artifact-section trust-section">
+          <div className="container">
+            <Eyebrow>Who We Work With</Eyebrow>
+            <h2>Made for the people behind the build.</h2>
+            <p className="section-intro">
+              We collaborate with homeowners, architects, contractors and
+              quantity surveyors who care about how a project comes together.
+            </p>
+            <div className="trust-grid">
               {[
-                [
-                  "Precision over generic",
-                  "Every gate, railing or grille is designed and fabricated to your home&apos;s actual architecture — not pulled from a catalogue.",
-                ],
-                [
-                  "Delivered on schedule",
-                  "Quality work, on time, with the process continually refined — no surprises for you or your contractor.",
-                ],
-                [
-                  "Built for professionals",
-                  "Tolerances, materials and finish quality that hold up to an architect&apos;s or quantity surveyor&apos;s scrutiny.",
-                ],
-              ].map(([title, text]) => (
+                "Architects",
+                "Contractors",
+                "Quantity Surveyors",
+                "Developers",
+              ].map((title, index) => (
                 <article key={title}>
+                  <span>0{index + 1} / 04</span>
                   <h3>{title}</h3>
-                  <p>{text}</p>
+                  <p>
+                    Tolerances, materials and finish quality built to hold up to
+                    the professionals who specify fabricators into luxury
+                    residential projects.
+                  </p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="artifact-section location-section" id="location">
+          <div className="container location-grid">
+            <div>
+              <Eyebrow>Find Us</Eyebrow>
+              <h2>Built in Nairobi. Installed across Kenya.</h2>
+              <p>
+                Our workshop is based in Membley Estate, Nairobi, where every
+                commission is measured, fabricated and finished before it
+                reaches site.
+              </p>
+              <Button
+                href="https://www.google.com/maps/search/?api=1&query=Membley%20Estate%2C%20Nairobi"
+                variant="outline"
+              >
+                Open in Google Maps
+              </Button>
+            </div>
+            <div
+              className="location-image"
+              style={{ backgroundImage: `url("${media.about}")` }}
+            >
+              <span>Membley Estate · Nairobi</span>
             </div>
           </div>
         </section>
@@ -371,24 +451,29 @@ export default function Home() {
         <section className="artifact-section contact-section" id="contact">
           <div className="container split-section">
             <div>
-              <Eyebrow>Get In Touch</Eyebrow>
-              <h2>Request a Quote</h2>
+              <Eyebrow>Start a Project</Eyebrow>
+              <h2>Have a drawing? Let&apos;s build it.</h2>
               <p>
-                Whether you&apos;re a homeowner with a set of plans, or an
-                architect or contractor building a shortlist of fabricators —
-                send your drawings, dimensions, or a description of the piece.
+                Share your requirements, dimensions, reference images or
+                drawings and we will help you explore the right fabrication
+                approach.
               </p>
             </div>
             <div className="contact-form-placeholder">
-              <span>Request a quote</span>
+              <span>WhatsApp / Phone</span>
               <p>
-                Share your name, phone, email, drawings or project description.
+                +254 181 650 805
+                <br />
+                jakinworksltd@gmail.com
               </p>
-              <Button href="/request-a-quote">Send Enquiry</Button>
+              <Button href="/request-a-quote" variant="light">
+                Request a quote
+              </Button>
             </div>
           </div>
         </section>
       </main>
+      <a className="whatsapp-float" href="https://wa.me/254181650805" aria-label="Chat with Jakin Works on WhatsApp"><span aria-hidden="true" /></a>
       <SiteFooter />
     </>
   );

@@ -9,7 +9,7 @@ const navItems = [
   ["About", "/#about"],
   ["Capabilities", "/#capabilities"],
   ["Materials", "/#materials"],
-  ["Projects", "/projects"],
+  ["Projects", "/#projects"],
   ["Shop", "/shop"],
   ["Journal", "/#journal"],
   ["Contact", "/#contact"],
@@ -146,10 +146,22 @@ export function SiteFooter() {
               Mild steel · Stainless steel · Aluminium
             </p>
           </div>
+          <div>
+            <Eyebrow>Follow along</Eyebrow>
+            <a href={siteConfig.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+            <a href={siteConfig.facebook} target="_blank" rel="noreferrer">
+              Facebook
+            </a>
+            <a href={siteConfig.tiktok} target="_blank" rel="noreferrer">
+              TikTok
+            </a>
+          </div>
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© {siteConfig.companyName}</span>
+        <span>© 2026 {siteConfig.companyName}</span>
         <span>Nairobi · Kenya</span>
       </div>
     </footer>

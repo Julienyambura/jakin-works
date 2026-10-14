@@ -1,2 +1,1 @@
-import { AboutPage } from "@/components/pages";
-export default AboutPage;
+export { default } from "@/app/page";

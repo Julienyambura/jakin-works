@@ -100,91 +100,69 @@ export function ServicesPage() {
 
 export function AboutPage() {
   return (
-    <PageFrame
-      eyebrow="About Jakin Works"
-      title={
-        <>
-          Craftsmanship should be
-          <br />
-          measured in the details.
-        </>
-      }
-      intro="A Nairobi-based fabrication company bringing greater precision, professionalism and attention to detail to architectural metalwork."
-    >
-      <section className="section">
-        <div className="container intro-grid">
-          <div
-            className="visual visual--detail"
-            style={{ backgroundImage: `url("${media.about}")` }}
-            role="img"
-            aria-label="Jakin Works workshop"
-          >
+    <>
+      <SiteHeader />
+      <main>
+      <section
+        className="artifact-hero"
+        style={{
+          backgroundImage: `linear-gradient(90deg, rgba(23,25,27,.9), rgba(23,25,27,.6) 55%, rgba(23,25,27,.25)), url("${media.hero}")`,
+        }}
+      >
+        <div className="container artifact-hero-grid">
+          <Eyebrow>Bespoke Metal Fabrication · Nairobi</Eyebrow>
+          <h1>Precision Craftsmanship for Exceptional Spaces</h1>
+          <p className="hero-materials">Mild Steel · Stainless Steel · Aluminium · Wrought Iron</p>
+          <p className="hero-description">
+            Jakin Works designs and fabricates bespoke architectural metalwork:
+            security, doors, windows, outdoor structures and interior detailing
+            engineered to the drawing, for Nairobi&apos;s most exceptional homes.
+          </p>
+          <div className="hero-actions">
+            <Button href="#contact">Request a Quote</Button>
+            <Button href="#capabilities" variant="outline">View Capabilities</Button>
           </div>
-          <div className="prose">
-            <Eyebrow>Our story</Eyebrow>
-            <h2>
-              One project at a time, we are building a standard that lasts.
-            </h2>
+        </div>
+      </section>
+      <section className="artifact-meta">
+        <div className="container artifact-meta-grid">
+          <div><span>WhatsApp / Phone</span><a href="https://wa.me/254181650805">+254 181 650 805</a></div>
+          <div><span>Workshop</span><strong>Membley Estate, Nairobi</strong></div>
+          <div><span>Email</span><a href="mailto:jakinworksltd@gmail.com">jakinworksltd@gmail.com</a></div>
+        </div>
+      </section>
+      <section className="about-reference-page">
+        <div className="container about-reference-page__grid">
+          <div className="about-reference-page__copy">
+            <Eyebrow>About Jakin Works</Eyebrow>
+            <h2>Elevating Kenya&apos;s fabrication standard</h2>
+          </div>
+          <div className="about-reference-page__details">
             <p>
-              Jakin Works was founded with a vision to raise the standard of
-              architectural fabrication in Kenya; bringing greater precision,
-              professionalism and attention to detail to work that is too often
-              treated as purely functional.
+              Jakin Works was founded to elevate Kenya&apos;s architectural
+              fabrication standards through precision, professionalism and
+              attention to detail — combining contemporary methods with
+              experienced craftsmen to create durable, refined products in
+              mild steel, stainless steel, aluminium and wrought iron.
             </p>
             <p>
-              Starting with bespoke mild steel, stainless steel and aluminium
-              fabrication, we combine modern fabrication techniques with the
-              skill and experience of trusted craftsmen, delivering products
-              that are strong, durable and refined.
+              Every commission is delivered on schedule, to spec, with the
+              process continually refined — for homeowners and for the
+              architects, contractors and quantity surveyors who bring us into
+              their projects.
             </p>
+            <div className="about-reference-page__stats">
+              <div><strong>4</strong><span>Materials Worked</span></div>
+              <div><strong>9</strong><span>Core Services</span></div>
+              <div><strong>100%</strong><span>Built to the Drawing</span></div>
+            </div>
           </div>
         </div>
+        <div className="container about-reference-page__rule" />
       </section>
-      <section className="section dark-panel">
-        <div className="container">
-          <SectionHeading
-            eyebrow="What guides us"
-            title="Precision is in the process."
-          />
-          <div className="principles">
-            {[
-              "Quality craftsmanship",
-              "Attention to detail",
-              "Continuous improvement",
-              "Reliable delivery",
-            ].map((item, index) => (
-              <div key={item}>
-                <strong>0{index + 1}</strong>
-                <h3>{item}</h3>
-                <p>
-                  We focus on precision, durability and a refined finish at
-                  every stage.
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <SectionHeading eyebrow="Our goals" title="Built to grow well." />
-          <div className="goal-grid">
-            {["Deliver", "Refine", "Build people", "Grow sustainably"].map(
-              (goal) => (
-                <div key={goal}>
-                  <h3>{goal}</h3>
-                  <p>
-                    To keep improving the quality, clarity and care behind every
-                    project.
-                  </p>
-                </div>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
-      <QuoteBand />
-    </PageFrame>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
 

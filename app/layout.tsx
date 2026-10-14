@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, IBM_Plex_Mono, Manrope } from "next/font/google";
+import { IBM_Plex_Mono, Manrope, Zilla_Slab } from "next/font/google";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Zilla_Slab({
   variable: "--font-display-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   description:
     "Jakin Works Ltd is a Nairobi-based architectural fabrication company specialising in bespoke mild steel, stainless steel and aluminium fabrication.",
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/icon.png", type: "image/png" }],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Jakin Works Ltd",

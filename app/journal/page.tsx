@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { Eyebrow, SiteFooter, SiteHeader } from "@/components/site";
 import { journalArticles } from "@/config/journal";
-import { media } from "@/config/media";
+import { JournalArticleLink } from "@/components/journal";
 
 export default function JournalPage() {
   return (
@@ -17,24 +16,23 @@ export default function JournalPage() {
         </section>
         <section className="section journal-list">
           <div className="container">
+            <div className="field-notes journal-field-notes">
             {journalArticles.map((article) => (
-              <article className="journal-list-item" key={article.slug}>
-                <div>
-                  <div
-                    className="photo-placeholder journal-photo"
-                    style={{
-                      backgroundImage:
-                        `linear-gradient(rgba(23, 25, 27, 0.08), rgba(23, 25, 27, 0.3)), url("${media.journal}")`,
-                    }}
-                    aria-hidden="true"
-                  />
-                  <span className="journal-label">{article.category} · {article.readTime}</span>
-                  <h2>{article.title}</h2>
-                  <p>{article.excerpt}</p>
-                </div>
-                <Link href={`/journal/${article.slug}`}>Read article <span aria-hidden="true">↗</span></Link>
+              <article className="journal-list-item" key={article.slug} style={{ backgroundImage: `linear-gradient(180deg, rgba(23,25,27,.05), rgba(23,25,27,.86)), url("${article.image}")` }}>
+                <span>{article.category}</span>
+                <small>{article.date} · {article.readTime}</small>
+                <h3>{article.title}</h3>
+                <p>{article.excerpt}</p>
+                <JournalArticleLink article={article} />
               </article>
             ))}
+            <article className="journal-list-item journal-ask-card">
+              <span>Ask the workshop</span>
+              <h3>Got a question about metalwork for your home?</h3>
+              <p>Tell us what you would like to understand about materials, finishes, costs or maintenance.</p>
+              <a href="https://wa.me/254181650805">Send a question →</a>
+            </article>
+            </div>
           </div>
         </section>
       </main>
