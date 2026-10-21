@@ -27,7 +27,6 @@ export function JournalArticleLink({ article }: { article: JournalArticle }) {
           <article className="journal-modal__panel">
             <button className="journal-modal__close" type="button" aria-label="Close article" onClick={() => setOpen(false)}>×</button>
             <div className="journal-modal__image" style={{ backgroundImage: `url("${article.image}")` }} aria-hidden="true" />
-            <div className="journal-modal__image" style={{ backgroundImage: `url("${article.image}")` }} aria-hidden="true" />
             <div className="journal-modal__eyebrow">Journal · {article.category}</div>
             <h2>{article.title}</h2>
             <div className="journal-modal__meta">Jakin Works · {article.date} · {article.readTime}</div>

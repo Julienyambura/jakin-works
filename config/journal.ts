@@ -60,8 +60,14 @@ export const journalArticles: JournalArticle[] = [
     title: "CNC Cutting 101: What Precision Metalwork Can Do for Your Facade",
     excerpt: "How digital cutting makes intricate screens possible, and what to decide on pattern, material and fixing.",
     image: "/CNC_FACADES.jpeg",
-    paragraphs: ["Digital cutting opens up patterns and screens that are difficult to achieve by hand, while keeping every repeated detail accurate."],
-    sections: [],
+    paragraphs: [],
+    sections: sections([
+      ["What CNC cutting changes", "Digital cutting opens up patterns and screens that are difficult to achieve by hand, while keeping every repeated detail accurate. A drawing becomes a repeatable pattern, so the finished panel can be checked against the intended design before fabrication begins."],
+      ["Choose the pattern for the building", "A facade screen needs to do more than look distinctive. Pattern density affects privacy, daylight, airflow and the weight of the panel. We help balance the visual reference with the orientation of the facade and the way the space behind it will be used."],
+      ["Material and finish", "Mild steel is a versatile and economical choice for painted or powder-coated screens. Aluminium reduces weight where panels are large or fixed above an entrance. The edge preparation and protective finish matter as much as the cut itself, especially on exposed elevations."],
+      ["Plan the fixing early", "The cleanest screen is designed with its frame, stand-offs and access points from the start. Fixing locations should align with the structure behind the facade, leave room for movement and allow the panel to be removed for maintenance without damaging the finish."],
+      ["Start with a drawing", "Send us a sketch, reference image or digital file and we can advise on pattern scale, material, finish and fixing. From there, we prepare a clear cutting drawing for approval before any sheet is cut."],
+    ]),
   },
   {
     slug: "powder-coating-vs-paint",

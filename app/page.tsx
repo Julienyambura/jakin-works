@@ -332,39 +332,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="artifact-section shop-section" id="shop">
-          <div className="container">
-            <Eyebrow>Retail & Custom Pieces</Eyebrow>
-            <h2>The Jakin Shop</h2>
-            <p className="section-intro">
-              Beyond architectural commissions, our workshop makes smaller metal
-              pieces for the home and garden, in-stock designs or built to your
-              own.
-            </p>
-            <div className="shop-grid">
-              {[
-                ["Metal Wall Art", media.shop.customPieces],
-                ["Sculpture & Statement Pieces", media.shop.gates],
-                ["Custom Furniture", media.shop.hardware],
-              ].map(([title, image]) => (
-                <article className="shop-card" key={title}>
-                  <div
-                    className="shop-photo"
-                    style={{ backgroundImage: `url("${image}")` }}
-                  />
-                  <span className="shop-label">Price on enquiry</span>
-                  <h3>{title}</h3>
-                  <p>
-                    Made to order in our workshop, in the same four materials
-                    and finished to suit your space.
-                  </p>
-                  <a href="https://wa.me/254181650805">Enquire on WhatsApp →</a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="artifact-section journal-section" id="journal">
           <div className="container">
             <Eyebrow>Journal</Eyebrow>

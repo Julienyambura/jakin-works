@@ -1252,7 +1252,7 @@ a {
   color: var(--oxide-light);
 }
 .capability-photo {
-  min-height: 150px;
+  min-height: 220px;
   margin: -16px -16px 22px;
   padding: 0;
   background-position: center;
@@ -1377,12 +1377,6 @@ a {
   background: var(--oyster);
   color: var(--ink);
   box-shadow: 0 18px 50px rgba(0, 0, 0, .25);
-}
-.journal-modal__image {
-  min-height: 170px;
-  margin: -52px -54px 28px;
-  background-position: center;
-  background-size: cover;
 }
 .journal-modal__image {
   height: 170px;
@@ -1808,7 +1802,7 @@ a {
 }
 .shop-card h3 {
   margin: 28px 0 16px;
-  font-size: clamp(29px, 3vw, 42px);
+  font-size: clamp(25px, 2.4vw, 34px);
   line-height: 0.94;
 }
 .shop-card p {
@@ -1846,7 +1840,7 @@ a {
 }
 .shop-item .photo-placeholder {
   margin: -22px -22px 22px;
-  min-height: 150px;
+  min-height: 230px;
 }
 .shop-photo {
   background-position: center;
@@ -1865,7 +1859,7 @@ a {
 }
 .shop-item h3 {
   margin: 0 0 12px;
-  font-size: clamp(28px, 3vw, 38px);
+  font-size: clamp(24px, 2.4vw, 32px);
 }
 .shop-item p {
   margin: 0;

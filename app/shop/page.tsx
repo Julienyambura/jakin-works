@@ -4,39 +4,21 @@ import { media } from "@/config/media";
 
 const products = [
   {
-    title: "Standard steel gates",
-    copy: "Proportioned, durable gate designs fabricated to your opening and finished for the conditions on site.",
-    type: "Exterior",
-    image: media.shop.gates,
-  },
-  {
-    title: "Steel and aluminium doors",
-    copy: "Reliable entry and interior door pieces available in considered standard profiles and finishes.",
-    type: "Doors",
-    image: media.shop.doors,
-  },
-  {
-    title: "Windows and opening sections",
-    copy: "Clean-lined window frames and opening sections fabricated to suit glazing, ventilation and light.",
-    type: "Windows",
-    image: media.shop.windows,
-  },
-  {
-    title: "Brushed brass pulls",
-    copy: "Interior cabinet and door pulls designed for durable, understated impact.",
-    type: "Interior",
-    image: media.shop.hardware,
-  },
-  {
-    title: "Metal furniture and swings",
-    copy: "Tables, benches, frames and swings made as repeatable pieces or developed around your own design.",
-    type: "Custom pieces",
+    title: "Metal Wall Art",
+    copy: "Made to order in our workshop, in the same four materials and finished to suit your space.",
+    type: "Price on enquiry",
     image: media.shop.customPieces,
   },
   {
-    title: "Gate hardware kit",
-    copy: "Hand-finished hinges, latches and mounting hardware for refined, secure detailing.",
-    type: "Hardware",
+    title: "Sculpture & Statement Pieces",
+    copy: "Distinctive fabricated pieces developed around your room, garden or architectural setting.",
+    type: "Price on enquiry",
+    image: media.shop.gates,
+  },
+  {
+    title: "Custom Furniture",
+    copy: "Tables, benches and frames fabricated in metal and finished for everyday use at home.",
+    type: "Price on enquiry",
     image: media.shop.finishing,
   },
 ];
@@ -44,15 +26,9 @@ const products = [
 export default function ShopPage() {
   return (
     <PageFrame
-      eyebrow="Shop"
-      title={
-        <>
-          Standard pieces,
-          <br />
-          made to order.
-        </>
-      }
-      intro="Shop repeatable pieces such as gates, doors and windows, or bring us a design for a custom metal furniture, swing or architectural commission."
+      eyebrow="Retail & Custom Pieces"
+      title="The Jakin Shop"
+      intro="Beyond architectural commissions, our workshop makes smaller metal pieces for the home and garden, in-stock designs or built to your own."
     >
       <section className="section">
         <div className="container shop-layout">
@@ -70,7 +46,7 @@ export default function ShopPage() {
               <Eyebrow>{product.type}</Eyebrow>
               <h3>{product.title}</h3>
               <p>{product.copy}</p>
-              <Button href="/request-a-quote">Request a quote</Button>
+              <a href="https://wa.me/254181650805">Enquire on WhatsApp →</a>
             </article>
           ))}
         </div>

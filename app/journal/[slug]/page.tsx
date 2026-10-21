@@ -25,7 +25,14 @@ export default async function JournalArticlePage({ params }: { params: Promise<{
         </section>
         <article className="section article-body">
           <div className="container prose">
-            {article.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            <div className="article-body__image" style={{ backgroundImage: `url("${article.image}")` }} aria-label={article.title} role="img" />
+            <p className="article-body__lead">{article.excerpt}</p>
+            {(article.sections.length ? article.sections : article.paragraphs.map((body) => ({ heading: "", body }))).map((section) => (
+              <section key={`${section.heading}-${section.body}`}>
+                {section.heading && <h2>{section.heading}</h2>}
+                <p>{section.body}</p>
+              </section>
+            ))}
           </div>
         </article>
       </main>
