@@ -12,18 +12,20 @@ export function PageFrame({
   eyebrow,
   title,
   intro,
+  pageHeroClassName,
   children,
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro?: string;
+  pageHeroClassName?: string;
   children: React.ReactNode;
 }) {
   return (
     <>
       <SiteHeader />
       <main>
-        <section className="page-hero">
+        <section className={`page-hero ${pageHeroClassName ?? ""}`}>
           <div className="container">
             <Eyebrow>{eyebrow}</Eyebrow>
             <h1>{title}</h1>
@@ -324,6 +326,7 @@ export function QuotePage() {
         </>
       }
       intro="Share your requirements, dimensions, reference images or drawings and we will help you explore the fabrication approach."
+      pageHeroClassName="page-hero--compact"
     >
       <section className="section">
         <div className="container quote-layout">

@@ -129,17 +129,17 @@ export function SiteFooter() {
         <div className="footer-links">
           <div>
             <Eyebrow>Explore</Eyebrow>
-            <Link href="/projects">Projects</Link>
-            <Link href="/services">Capabilities</Link>
-            <Link href="/materials">Materials</Link>
+            <Link href="/#projects">Projects</Link>
+            <Link href="/#capabilities">Capabilities</Link>
+            <Link href="/#materials">Materials</Link>
             <Link href="/shop">Shop</Link>
-            <Link href="/journal">Journal</Link>
-            <Link href="/about">About</Link>
+            <Link href="/#journal">Journal</Link>
+            <Link href="/#about">About</Link>
           </div>
           <div>
             <Eyebrow>Start here</Eyebrow>
-            <Link href="/request-a-quote">Request a quote</Link>
-            <Link href="/contact">Contact us</Link>
+            <Link href="/#contact">Request a quote</Link>
+            <Link href="/#contact">Contact us</Link>
             <p className="footer-note">
               Bespoke architectural fabrication
               <br />

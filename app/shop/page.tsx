@@ -29,8 +29,9 @@ export default function ShopPage() {
       eyebrow="Retail & Custom Pieces"
       title="The Jakin Shop"
       intro="Beyond architectural commissions, our workshop makes smaller metal pieces for the home and garden, in-stock designs or built to your own."
+      pageHeroClassName="page-hero--compact"
     >
-      <section className="section">
+      <section className="section shop-section">
         <div className="container shop-layout">
           {products.map((product) => (
             <article className="shop-item" key={product.title}>
